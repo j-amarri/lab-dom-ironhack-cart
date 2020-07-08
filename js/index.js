@@ -24,19 +24,18 @@ function calculateAll() {
   // ITERATION 3
   const totalPriceElement = document.getElementById('total-value');
   totalPriceElement.innerHTML = `Total: $ ${totalPrice}`;
+  return totalPrice;
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.dir(target);
+  // target will "target" the button itself
+  const target = event.currentTarget.parentNode.parentNode;
+  const parentTarget = target.parentNode;
   console.log('The target in remove is:', target);
-  const parentNode = target.parentNode.parentNode;
-  console.dir(parentNode);
-  parentNode.removeChild(event);
-
-  //... your code goes here
+  parentTarget.removeChild(target);
+  return calculateAll() - updateSubtotal(event);
 }
 
 // ITERATION 5
