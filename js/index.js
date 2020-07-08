@@ -41,7 +41,11 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const createProductBtnElement = document.getElementById('create');
+  createProductBtnElement.addEventListener('click', createProduct);
+  console.dir(createProductBtnElement);
+  /*   const productNameElement = document.querySelector('.create-product input');
+  console.log(productNameElement); */
 }
 
 window.addEventListener('load', () => {
